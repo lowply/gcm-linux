@@ -4,9 +4,12 @@ This is an example of how to authenticate to GitHub.com using [Git Credential Ma
 
 ## Try it out in one minute
 
+At this moment, you'll first need to authenticate to read publicly available packages. See [Authenticating to GitHub Container Registry](https://docs.github.com/en/free-pro-team@latest/packages/managing-container-images-with-github-container-registry/pushing-and-pulling-docker-images#authenticating-to-github-container-registry) for more information.
+
 ```bash
-docker pull lowply/gcm-linux
-docker run -it --rm lowply/gcm-linux
+echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
+docker pull ghcr.io/lowply/gcm-linux:latest
+docker run -it --rm ghcr.io/lowply/gcm-linux:latest
 ```
 
 Now try `git clone` your private repository in the container. You'll be asked to authenticate based on the [auth mode](https://github.com/microsoft/Git-Credential-Manager-Core/blob/master/docs/configuration.md#credentialgithubauthmodes) you choose.
