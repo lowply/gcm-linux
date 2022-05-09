@@ -26,7 +26,7 @@ Cloning into 'repo'...
 Select an authentication method for 'https://github.com/':
   1. Device code (default)
   2. Personal access token
-option (enter for default): 
+option (enter for default):
 To complete authentication please visit https://github.com/login/device and enter the following code:
 XXXX-XXXX
 ```
@@ -43,7 +43,7 @@ Select an authentication method for 'https://github.com/':
   2. Personal access token
 option (enter for default): 2
 Enter GitHub personal access token for 'https://github.com/'...
-Token: 
+Token:
 ```
 
 ## Credential store
@@ -58,4 +58,4 @@ docker build . -t lowply/gcm-linux
 
 ## Further reading
 
-[Git Credential Manager Core: Building a universal authentication experience - The GitHub Blog](https://github.blog/2020-07-02-git-credential-manager-core-building-a-universal-authentication-experience/)
+- [Git Credential Manager: authentication for everyone | The GitHub Blog](https://github.blog/2022-04-07-git-credential-manager-authentication-for-everyone/)
