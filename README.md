@@ -53,7 +53,7 @@ Because the purpose of this repository is to demonstrate how to get started with
 ## Build
 
 ```bash
-docker build . -t lowply/gcm-linux
+make build
 ```
 
 ## Further reading

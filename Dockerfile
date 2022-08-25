@@ -4,19 +4,17 @@ FROM ubuntu:22.04
 
 WORKDIR /tmp
 
+# The latest release can be downloaded at https://github.com/GitCredentialManager/git-credential-manager/releases
+ADD https://github.com/GitCredentialManager/git-credential-manager/releases/download/v2.0.785/gcm-linux_amd64.2.0.785.deb .
+
+RUN <<EOF
+apt-get update
+apt-get -y install git libicu-dev
+dpkg -i gcm-linux_amd64.2.0.785.deb
+EOF
+
 RUN <<EOF
 useradd -g users -m mona
-EOF
-
-RUN <<EOF
-apt update
-apt -y install git curl gpg libicu-dev
-EOF
-
-RUN <<EOF
-# The latest release can be downloaded at https://github.com/GitCredentialManager/git-credential-manager/releases
-curl -OL https://github.com/GitCredentialManager/git-credential-manager/releases/download/v2.0.696/gcmcore-linux_amd64.2.0.696.deb
-dpkg -i gcmcore-linux_amd64.2.0.696.deb
 EOF
 
 USER mona
